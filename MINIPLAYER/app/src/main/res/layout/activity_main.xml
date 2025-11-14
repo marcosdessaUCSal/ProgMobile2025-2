@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B9BEC3"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/electrolize_regular"
+        android:text="MEU MINI PLAYER"
+        android:textAlignment="center"
+        android:textColor="#6E3A23"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_painel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        app:cardBackgroundColor="#BBBBBB"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#000"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_visor_nome"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="3"
+                    android:background="#000"
+                    android:fontFamily="@font/electrolize_regular"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="MÚSICA"
+                    android:textColor="#BCA127"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_visor_musica"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:background="#322E2E"
+                    android:fontFamily="@font/electrolize_regular"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="- Nenhuma mídia carregada"
+                    android:textColor="#00ACC1"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FF000000"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_visor_player"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="#000"
+                    android:fontFamily="monospace"
+                    android:gravity="bottom"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="00:00.0"
+                    android:textColor="#9800ACC1"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_play"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="3"
+                    android:backgroundTint="#6E3A23"
+                    android:fontFamily="@font/electrolize_regular"
+                    android:onClick="onClickPlay"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    app:cornerRadius="6dp"
+                    app:icon="@drawable/play_arrow"
+                    app:iconPadding="2dp"
+                    app:iconSize="36dp"
+                    app:iconTint="#80FFFFFF"
+                    app:strokeColor="#000" />
+
+                <Button
+                    android:id="@+id/btn_pause"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="3"
+                    android:backgroundTint="#3B607A"
+                    android:fontFamily="@font/electrolize_regular"
+                    android:onClick="onClickPause"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    app:cornerRadius="6dp"
+                    app:icon="@drawable/pause"
+                    app:iconTint="#80FFFFFF"
+                    app:strokeColor="#000" />
+
+            </LinearLayout>
+
+
+            <SeekBar
+                android:id="@+id/sb_progresso_musica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="#FDD835"
+                android:thumb="@android:color/transparent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/electrolize_regular"
+                    android:text="VOLUME"
+                    android:textAlignment="textEnd"
+                    android:textColor="#9800ACC1" />
+
+                <SeekBar
+                    android:id="@+id/sb_vol_musica"
+                    style="@style/Widget.AppCompat.SeekBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="12"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressBackgroundTint="#FFFFFF"
+                    android:progressTint="#6E3A23"
+                    android:thumbTint="#6E3A23" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FF000000"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_ex1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#816E1E"
+                    android:fontFamily="@font/electrolize_regular"
+                    android:onClick="onClickEx"
+                    android:text="Ex 1"
+                    android:textColor="#80FFFFFF"
+                    android:textStyle="bold"
+                    app:cornerRadius="6dp"
+                    app:icon="@drawable/music_cast"
+                    app:iconPadding="1dp"
+                    app:iconSize="13dp"
+                    app:iconTint="#80FFFFFF"
+                    app:strokeColor="#000" />
+
+                <Button
+                    android:id="@+id/btn_ex2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#6E3A23"
+                    android:fontFamily="@font/electrolize_regular"
+                    android:onClick="onClickEx"
+                    android:text="Ex 2"
+                    android:textColor="#80FFFFFF"
+                    android:textStyle="bold"
+                    app:cornerRadius="6dp"
+                    app:icon="@drawable/music_cast"
+                    app:iconPadding="1dp"
+                    app:iconSize="13dp"
+                    app:iconTint="#80FFFFFF"
+                    app:strokeColor="#000" />
+
+                <Button
+                    android:id="@+id/btn_ex3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#3B607A"
+                    android:fontFamily="@font/electrolize_regular"
+                    android:onClick="onClickEx"
+                    android:text="Ex 3"
+                    android:textColor="#80FFFFFF"
+                    android:textStyle="bold"
+                    app:cornerRadius="6dp"
+                    app:icon="@drawable/music_cast"
+                    app:iconPadding="1dp"
+                    app:iconSize="13dp"
+                    app:iconTint="#80FFFFFF"
+                    app:strokeColor="#000" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
